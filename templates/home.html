@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My server</title>
+</head>
+<body>
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            <p>
+                {{form.command.label}}<br>
+                {{form.command()}}
+                {% for error in form.command.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>{{form.submit()}}</p>
+        </form>
+        <ul>
+            <li>0-Start</li>
+            <li>1-Stop</li>
+            <li>2-Throw in</li>
+        </ul>
+</body>
+</html>
